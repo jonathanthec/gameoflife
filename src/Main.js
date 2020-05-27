@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Grid from './Grid';
 
 export default function Main() {
+    const [hasStarted, setHasStarted] = useState(false);
     const [speed, setSpeed] = useState(100);
     const [rows] = useState(30);
     const [cols] = useState(50);
@@ -17,6 +18,7 @@ export default function Main() {
     }
 
     const seed = () => {
+        clear();
         let gridCopy = arrayClone(gridFull);
         for (let i = 0; i < rows; i++) {
             for (let j = 0; j < cols; j++) {
@@ -29,27 +31,31 @@ export default function Main() {
     }
 
     const start = () => {
+        setHasStarted(true);
         clearInterval(intervalId.current);
         intervalId.current = setInterval(play, speed);
     }
 
     const pause = () => {
+        setHasStarted(false);
         clearInterval(intervalId.current);
     }
 
     const slow = () => {
+        setHasStarted(true);
         setSpeed(1000);
         start();
     }
 
     const fast = () => {
+        setHasStarted(true);
         setSpeed(100);
         start();
     }
 
     const clear = () => {
-        let grid = Array(rows).fill().map(() => Array(cols).fill(false));
-        setGridFull(grid);
+        setHasStarted(false);
+        setGridFull(Array(rows).fill().map(() => Array(cols).fill(false)));
         setGeneration(0);
     }
 
@@ -76,8 +82,10 @@ export default function Main() {
     }
 
     useEffect(() => {
-        seed();
-    }, [])
+        if (hasStarted) {
+            start();
+        }
+    }, [start])
 
     return (
         <div>
