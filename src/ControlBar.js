@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function ControlBar(props) {
-    const { start, pause, clear, slow, fast, seed } = props;
+    const { start, pause, clear, slow, fast, seed, gridSize } = props;
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="control-bar-container">
@@ -13,9 +13,9 @@ export default function ControlBar(props) {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     <NavDropdown title="Select Grid" id="collasible-nav-dropdown" className="control-bar-button" variant="outline-light">
-                        <NavDropdown.Item>Small Grid</NavDropdown.Item>
-                        <NavDropdown.Item>Medium Grid</NavDropdown.Item>
-                        <NavDropdown.Item>Large Grid</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => gridSize("1")}>Small Grid</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => gridSize("2")}>Medium Grid</NavDropdown.Item>
+                        <NavDropdown.Item onClick={() => gridSize("3")}>Large Grid</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Start" id="collasible-nav-dropdown" className="control-bar-button" variant="outline-light">
                         <NavDropdown.Item onClick={slow}>Slow</NavDropdown.Item>

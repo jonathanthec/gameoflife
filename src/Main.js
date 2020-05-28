@@ -5,8 +5,8 @@ import ControlBar from './ControlBar';
 export default function Main() {
     const [hasStarted, setHasStarted] = useState(false);
     const [speed, setSpeed] = useState(100);
-    const [rows] = useState(30);
-    const [cols] = useState(50);
+    const [rows, setRows] = useState(30);
+    const [cols, setCols] = useState(50);
     const [generation, setGeneration] = useState(0);
     const [gridFull, setGridFull] = useState(Array(rows).fill().map(() => Array(cols).fill(false)))
     let intervalId = useRef(null);
@@ -81,6 +81,26 @@ export default function Main() {
         setGeneration(generation + 1);
     }
 
+    const gridSize = size => {
+        switch (size) {
+            case "1":
+                setRows(15);
+                setCols(25);
+                break;
+            case "2":
+                setRows(25);
+                setCols(40);
+                break;
+            case "3":
+                setRows(30);
+                setCols(50);
+                break;
+            default:
+                setRows(30);
+                setCols(50);
+        }
+    }
+
     useEffect(() => {
         if (hasStarted) {
             start();
@@ -96,8 +116,9 @@ export default function Main() {
                 slow={slow}
                 fast={fast}
                 seed={seed}
+                gridSize={gridSize}
             />
-            <h2>Current Generation: {generation}</h2>
+            <h2 className="gen-count">Current Generation: {generation}</h2>
             <Grid
                 rows={rows}
                 cols={cols}

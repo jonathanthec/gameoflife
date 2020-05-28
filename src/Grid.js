@@ -21,7 +21,7 @@ export default function Grid(props) {
         }
     }
     return (
-        <div className="grid" style={{ width: cols * 16 }}>
+        <div className="grid" style={{ width: cols * 14 }}>
             {rowArr}
         </div>
     )
