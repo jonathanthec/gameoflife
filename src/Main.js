@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styled from 'styled-components';
 import Grid from './Grid';
+import ControlBar from './ControlBar';
 
 export default function Main() {
     const [hasStarted, setHasStarted] = useState(false);
@@ -89,16 +89,15 @@ export default function Main() {
 
     return (
         <div>
-            <h1>Game of Life</h1>
+            <ControlBar
+                start={start}
+                pause={pause}
+                clear={clear}
+                slow={slow}
+                fast={fast}
+                seed={seed}
+            />
             <h2>Current Generation: {generation}</h2>
-            <ButtonsContainer>
-                <button onClick={start}>Start</button>
-                <button onClick={pause}>Pause</button>
-                <button onClick={clear}>Clear</button>
-                <button onClick={slow}>Slow Start</button>
-                <button onClick={fast}>Fast Start</button>
-                <button onClick={seed}>Let's Go Random!</button>
-            </ButtonsContainer>
             <Grid
                 rows={rows}
                 cols={cols}
@@ -112,8 +111,3 @@ export default function Main() {
 function arrayClone(arr) {
     return JSON.parse(JSON.stringify(arr));
 }
-
-const ButtonsContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-`;
