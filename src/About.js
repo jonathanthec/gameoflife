@@ -6,7 +6,7 @@ export default function About() {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="go-back-container">
-                <Navbar.Brand href="/" className="go-back-title">Go Back!</Navbar.Brand>
+                <Navbar.Brand href="/gameoflife" className="go-back-title">Go Back!</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             </Navbar>
             <h2 className="gen-count">Conway's Game of Life</h2>

@@ -2,15 +2,14 @@
   "name": "gameoflife",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jonathanthec.github.io/game-of-life",
+  "homepage": "https://jonathanthec.github.io/gameoflife",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
