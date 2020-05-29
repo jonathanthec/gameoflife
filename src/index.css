@@ -47,7 +47,6 @@ body {
 .control-bar-container {
   width: 100%;
   font-size: 1.6rem;
-  opacity: 85%;
   z-index: 999;
 }
 
@@ -71,23 +70,6 @@ body {
 }
 
 /************************************ About Tag CSS ************************************/
-
-.about-tag {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.go-back-container {
-    width: 100%;
-    font-size: 1.6rem;
-    opacity: 85%;
-    z-index: 999;
-}
-
-.go-back-title {
-  font-size: 2rem;
-  margin-left: 50px;
-}
 
 .about-text {
   margin-top: 30px;
