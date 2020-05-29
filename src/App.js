@@ -3,15 +3,11 @@ import { Switch, Route } from 'react-router-dom';
 import Main from './Main';
 import About from './About';
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/gameoflife" component={Main} />
-        <Route exact path="/gameoflife/about" component={About} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/gameoflife" component={Main} />
+      <Route exact path="/gameoflife/about" component={About} />
+    </Switch>
   );
 }
-
-export default App;
