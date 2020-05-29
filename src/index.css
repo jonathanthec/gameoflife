@@ -48,27 +48,52 @@ code {
 /************************************ Control Bar CSS ************************************/
 
 .control-bar-container {
+  width: 100%;
+  font-size: 1.6rem;
+  opacity: 85%;
+  z-index: 999;
+}
+
+.control-bar-container-title {
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.control-bar-button {
+  text-decoration-color: white;
+  margin-right: 2rem;
+}
+
+/************************************ Generation Count CSS ************************************/
+
+.gen-count {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  margin-top: 30px;
+}
+
+/************************************ About Tag CSS ************************************/
+
+.about-tag {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.go-back-container {
     width: 100%;
     font-size: 1.6rem;
     opacity: 85%;
     z-index: 999;
 }
 
-.control-bar-container-title {
-    font-size: 2rem;
-    margin-right: 2rem;
+.go-back-title {
+  font-size: 2rem;
+  margin-left: 50px;
 }
 
-.control-bar-button {
-    text-decoration-color: white;
-    margin-right: 2rem;
-}
-
-/************************************ Generation CSS ************************************/
-
-.gen-count {
-    margin: auto;
-    text-align: center;
-    width: 50%;
-    margin-top: 30px;
+.about-text {
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
 }

@@ -8,7 +8,7 @@ export default function ControlBar(props) {
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="control-bar-container">
-            <Navbar.Brand href="#" className="control-bar-container-title">Conway's Game of Life</Navbar.Brand>
+            <Navbar.Brand href="/" className="control-bar-container-title">Conway's Game of Life</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">

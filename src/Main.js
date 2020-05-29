@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Grid from './Grid';
 import ControlBar from './ControlBar';
 
@@ -105,6 +106,7 @@ export default function Main() {
         if (hasStarted) {
             start();
         }
+        // eslint-disable-next-line
     }, [start])
 
     return (
@@ -125,6 +127,9 @@ export default function Main() {
                 gridFull={gridFull}
                 selectBox={selectBox}
             />
+            <div className="about-tag">
+                <button><Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About Game of Life</Link></button>
+            </div>
         </div>
     )
 }
