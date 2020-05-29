@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-//import { Link } from 'react-router-dom';
 import Grid from './Grid';
 import ControlBar from './ControlBar';
+import About from './About'
 
 export default function Main() {
     const [hasStarted, setHasStarted] = useState(false);
@@ -127,9 +127,7 @@ export default function Main() {
                 gridFull={gridFull}
                 selectBox={selectBox}
             />
-            <div className="about-tag">
-                <button><a href="/gameoflife/about" style={{ textDecoration: "none", color: "black" }}>About Game of Life</a></button>
-            </div>
+            <About />
         </div>
     )
 }
